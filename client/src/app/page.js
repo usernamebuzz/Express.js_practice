@@ -1,12 +1,12 @@
-import PostList from './posts';
+import PostList from './postList';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <button>
-        <Link href="/write">Write</Link>
-      </button>
+      <Link href="/write">
+        <button>Write</button>
+      </Link>
       <PostList />
     </>
   );

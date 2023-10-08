@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import styles from './posts.module.css';
+import Link from 'next/link';
 
 async function fetchPosts() {
   const response = await axios.get('http://localhost:3001/posts');
@@ -22,11 +23,13 @@ export default function PostList() {
     <div className="App">
       {posts.map((value) => {
         return (
-          <div className={styles.post}>
-            <div className={styles.title}> {value.title} </div>
-            <div className={styles.body}>{value.postText}</div>
-            <div className={styles.footer}>{value.username}</div>
-          </div>
+          <Link href={`/detail/${value.id}`}>
+            <div className={styles.post}>
+              <div className={styles.title}> {value.title} </div>
+              <div className={styles.body}>{value.postText}</div>
+              <div className={styles.footer}>{value.username}</div>
+            </div>
+          </Link>
         );
       })}
     </div>
