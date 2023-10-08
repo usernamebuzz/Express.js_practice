@@ -1,11 +1,9 @@
 'use client';
 import React from 'react';
-import { useParams } from 'next/navigation';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Post({ params }) {
-  //const params = useParams(); // Use the useRouter hook inside your functional component.
   async function fetchPost() {
     const response = await axios.get(
       `http://localhost:3001/posts/detail/${params.id}`
