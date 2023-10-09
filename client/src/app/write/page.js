@@ -21,10 +21,9 @@ function Write() {
   const createPost = async (data) => {
     try {
       const response = await axios.post('http://localhost:3001/posts', data);
-      // Handle response data or actions here
+
       console.log('Post created:', response.data);
     } catch (error) {
-      // Handle errors here
       console.error('Error creating post:', error);
     }
   };
